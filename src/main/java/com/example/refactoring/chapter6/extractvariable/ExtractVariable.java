@@ -1,11 +1,10 @@
 package com.example.refactoring.chapter6.extractvariable;
 
-import com.sun.org.apache.xpath.internal.operations.Or;
 
 public class ExtractVariable {
     public static void main(String[] args) {
 
-        System.out.println(price(new Order(10, 5)));
+        System.out.println(price(new Order(100, 6)));
     }
 
     public static double price(Order order) {
