@@ -14,11 +14,13 @@ public class ExtractFunction {
         System.out.println(printOwing(invoice));
     }
 
+
+
     public static String printOwing(Invoice invoice){
         StringBuffer result = new StringBuffer();
-        int outstanding = 0;
+
         pringBanner(result);
-        outstanding = getOutstanding(invoice, outstanding);
+        int outstanding = getOutstanding(invoice);
         getDueDate(invoice);
         printDetails(invoice, result, outstanding);
         return result.toString();
@@ -29,7 +31,8 @@ public class ExtractFunction {
         invoice.dueDate = today.plusDays(30);
     }
 
-    public static int getOutstanding(Invoice invoice, int outstanding) {
+    public static int getOutstanding(Invoice invoice) {
+        int outstanding = 0;
         for(Order o: invoice.orders){
             outstanding += o.amount;
         }
