@@ -8,9 +8,11 @@ public class ExtractVariable {
     }
 
     public static double price(Order order) {
-        //
-        return order.quantity * order.itemPrice -
-                Math.max(0, order.quantity - 500) * order.itemPrice * 0.05 +
-                Math.min(order.quantity * order.itemPrice * 0.1, 100);
+
+        double basePrice = order.quantity * order.itemPrice;
+        double quantity =  Math.max(0, order.quantity - 500) * order.itemPrice * 0.05;
+        double shipping = Math.min(order.quantity * order.itemPrice * 0.1, 100);
+
+        return basePrice - quantity + shipping;
     }
 }
