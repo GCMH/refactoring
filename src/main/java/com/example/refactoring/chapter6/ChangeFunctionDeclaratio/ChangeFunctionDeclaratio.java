@@ -14,4 +14,6 @@ public class ChangeFunctionDeclaratio {
     public static double circum(double r){
         return  2 * Math.PI * r;
     }
+
+
 }
