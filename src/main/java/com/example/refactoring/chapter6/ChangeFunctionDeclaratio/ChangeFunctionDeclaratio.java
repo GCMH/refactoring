@@ -4,10 +4,10 @@ public class ChangeFunctionDeclaratio {
 
 
     public static void main(String[] args) {
-        System.out.println(circum(2.3f));
+        System.out.println(circumference(2.3f));
     }
 
-    public static double circum(double r){
+    public static double circumference(double r){
         return  2 * Math.PI * r;
     }
 }
