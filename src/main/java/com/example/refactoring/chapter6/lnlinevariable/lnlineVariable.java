@@ -13,7 +13,6 @@ public class lnlineVariable {
     }
 
     public static boolean check(Order order){
-        int price = order.basePrice;
-        return price > 1000;
+        return order.basePrice > 1000;
     }
 }
