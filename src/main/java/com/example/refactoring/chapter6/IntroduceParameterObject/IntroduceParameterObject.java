@@ -31,7 +31,7 @@ public class IntroduceParameterObject {
 
     public static List<Range> readingsOutsideRange(Station station, int min, int max, NumberRange numberRange){
         return station.reading.stream()
-                .filter(s -> s.temp > min || s.temp > max)
+                .filter(s -> s.temp > numberRange.min || s.temp > numberRange.max)
                 .collect(Collectors.toList());
     }
 }
