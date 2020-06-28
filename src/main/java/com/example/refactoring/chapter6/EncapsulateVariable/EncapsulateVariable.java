@@ -7,6 +7,7 @@ public class EncapsulateVariable {
         Spaceship spaceship = new Spaceship();
         spaceship.owner = defaultOwner.getDefault();
 
+
     }
 
 
