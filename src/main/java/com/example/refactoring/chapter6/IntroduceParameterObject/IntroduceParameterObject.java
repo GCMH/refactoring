@@ -18,10 +18,12 @@ public class IntroduceParameterObject {
 
 
         OperatingPlan operatingPlan = new OperatingPlan();
-        operatingPlan.temperatureCeiling = 45;
+        operatingPlan.temperatureCeiling = 46;
         operatingPlan.temperatureFloor = 42;
 
-        readingsOutsideRange(station, operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling);
+        List<Range> ranges = readingsOutsideRange(station, operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling);
+
+        assert ranges.size() == 2;
 
     }
 
