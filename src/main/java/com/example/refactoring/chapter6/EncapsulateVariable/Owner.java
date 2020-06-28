@@ -10,4 +10,8 @@ public class Owner {
         this.firstName = firstName;
         this.lastName = lastName;
     }
+
+    public Owner getDefault(){
+        return this;
+    }
 }
