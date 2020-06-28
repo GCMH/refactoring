@@ -21,13 +21,15 @@ public class IntroduceParameterObject {
         operatingPlan.temperatureCeiling = 46;
         operatingPlan.temperatureFloor = 42;
 
-        List<Range> ranges = readingsOutsideRange(station, operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling);
+
+        NumberRange numberRange = new NumberRange(36,42);
+        List<Range> ranges = readingsOutsideRange(station, operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling, numberRange);
 
         assert ranges.size() == 2;
 
     }
 
-    public static List<Range> readingsOutsideRange(Station station, int min, int max){
+    public static List<Range> readingsOutsideRange(Station station, int min, int max, NumberRange numberRange){
         return station.reading.stream()
                 .filter(s -> s.temp > min || s.temp > max)
                 .collect(Collectors.toList());
