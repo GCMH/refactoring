@@ -5,4 +5,14 @@ public class Reading {
     Integer quantity;
     Integer month;
     Integer year;
+
+    public Reading() {
+    }
+
+    public Reading(Reading reading){
+        this.customer = reading.customer;
+        this.quantity = reading.quantity;
+        this.month = reading.month;
+        this.year = reading.year;
+    }
 }
