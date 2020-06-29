@@ -20,12 +20,12 @@ public class Reading {
         return baseRate() * this.quantity;
     }
 
-    private  double taxThreshold() {
+    public  double taxThreshold() {
         Integer year = this.year;
         return 0;
     }
 
-    private double baseRate() {
+    public double baseRate() {
         int i = this.month + this.year;
         return 0;
     }

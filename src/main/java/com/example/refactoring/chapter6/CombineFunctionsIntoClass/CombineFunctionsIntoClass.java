@@ -3,15 +3,15 @@ package com.example.refactoring.chapter6.CombineFunctionsIntoClass;
 public class CombineFunctionsIntoClass {
     public static void main(String[] args) {
         Reading c1 = acquireReading();
-        double baseCharge = baseRate(c1.month, c1.year) * c1.quantity;
+        double baseCharge = c1.baseRate() * c1.quantity;
 
         Reading c2 = acquireReading();
-        double base = (baseRate(c2.month, c2.year) * c2.quantity);
+        double base = (c2.baseRate() * c2.quantity);
         double taxableCharge = Math.max(0, base - taxThreshold(c2.year));
 
 
         Reading c3 = acquireReading();
-        double basicChargeAmount = calculateBaseCharge(c3);
+        double basicChargeAmount = c3.calculateBaseCharge();
     }
 
 
