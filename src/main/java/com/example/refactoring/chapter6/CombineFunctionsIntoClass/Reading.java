@@ -16,15 +16,17 @@ public class Reading {
         this.year = reading.year;
     }
 
-    public  double calculateBaseCharge(Reading aReading) {
-        return baseRate(aReading.month, aReading.year) * aReading.quantity;
+    public  double calculateBaseCharge() {
+        return baseRate() * this.quantity;
     }
 
-    private  double taxThreshold(Integer year) {
+    private  double taxThreshold() {
+        Integer year = this.year;
         return 0;
     }
 
-    private double baseRate(Integer month, Integer year) {
+    private double baseRate() {
+        int i = this.month + this.year;
         return 0;
     }
 }
