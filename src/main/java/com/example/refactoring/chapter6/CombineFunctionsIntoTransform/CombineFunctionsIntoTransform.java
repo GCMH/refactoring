@@ -2,16 +2,19 @@ package com.example.refactoring.chapter6.CombineFunctionsIntoTransform;
 
 
 public class CombineFunctionsIntoTransform {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         Reading c1 = acquireReading();
-        double baseCharge = c1.baseRate() * c1.quantity;
+        Result result = enrichReading(c1);
+        double baseCharge = result.baseCharge;
+
 
         Reading c2 = acquireReading();
-        double base = (baseRate(c2.month, c2.year) * c2.quantity);
-        double taxableCharge = Math.max(0, base - taxThreshold(c2.year));
+        result = enrichReading(c2);
+        double taxableCharge = result.taxableCharge;
 
         Reading c3 = acquireReading();
-        double basicChargeAmount = calculateBaseCharge(c3);
+        result = enrichReading(c3);
+        double basicChargeAmount = result.basicChargeAmount;
 
     }
 
