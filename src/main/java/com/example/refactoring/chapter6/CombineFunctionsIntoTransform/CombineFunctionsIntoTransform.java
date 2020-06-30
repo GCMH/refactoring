@@ -15,6 +15,13 @@ public class CombineFunctionsIntoTransform {
 
     }
 
+    static Result enrichReading(Reading reading) throws CloneNotSupportedException {
+        Result result = new Result();
+        Reading clone = (Reading) reading.clone();
+
+        return result;
+    }
+
     static double  calculateBaseCharge(Reading c3) {
         return baseRate(c3.month, c3.year) * c3.quantity;
     }

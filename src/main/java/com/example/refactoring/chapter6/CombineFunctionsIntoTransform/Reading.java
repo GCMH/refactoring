@@ -29,4 +29,9 @@ public class Reading {
         int i = this.month + this.year;
         return 0;
     }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }
