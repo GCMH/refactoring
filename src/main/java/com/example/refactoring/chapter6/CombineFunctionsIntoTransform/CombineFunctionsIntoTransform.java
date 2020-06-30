@@ -18,6 +18,12 @@ public class CombineFunctionsIntoTransform {
     static Result enrichReading(Reading reading) throws CloneNotSupportedException {
         Result result = new Result();
         Reading clone = (Reading) reading.clone();
+        result.baseCharge =  clone.baseRate() * clone.quantity;
+
+        double base = (baseRate(clone.month, clone.year) * clone.quantity);
+        result.taxableCharge = Math.max(0, base - taxThreshold(clone.year));
+
+        result.basicChargeAmount = calculateBaseCharge(clone);
 
         return result;
     }
