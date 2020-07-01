@@ -4,24 +4,12 @@ public class Main {
     public static void main(String[] args) {
 
 
-
     }
 
 
     public static double priceOrder(Product product, double quantity, ShippingMethod shippingMethod) {
-
-
         PriceData priceData = calculatePricingData(product, quantity);
-
-
-        double shippingPerCase = (priceData.basePrice > shippingMethod.discountThreshold)
-                ? shippingMethod.discountedFee : shippingMethod.feePerCase;
-
-
-        double shippingCost = quantity * shippingPerCase;
-
-        double price = priceData.basePrice - priceData.discount + shippingCost;
-        return price;
+        return applyShipping(priceData, shippingMethod);
     }
 
 
