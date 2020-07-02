@@ -1,0 +1,21 @@
+package com.example.refactoring.chapter6.ReplacePrimitiveWithObject;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Main {
+
+    public static void main(String[] args) {
+        List<Order> orders = Arrays.asList(new Order(), new Order(), new Order());
+
+        int length = orders.stream()
+                .filter(e -> e.getPriority().equals("aa") || e.getPriority().equals("sss"))
+                .collect(Collectors.toList())
+                .size();
+
+
+
+
+    }
+}
