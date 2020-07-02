@@ -7,5 +7,7 @@ public class Order {
 
     Priority priority;
 
-
+    public Priority getPriority(){
+        return this.priority;
+    }
 }

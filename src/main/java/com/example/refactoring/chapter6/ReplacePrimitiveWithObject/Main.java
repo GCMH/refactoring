@@ -14,5 +14,11 @@ public class Main {
                         e.getPriority().toString().equals("sss"))
                 .collect(Collectors.toList())
                 .size();
+
+
+        orders.stream()
+                .filter(e -> e.getPriority().isEquals(new Priority("11")))
+                .collect(Collectors.toList())
+                .size()
     }
 }
