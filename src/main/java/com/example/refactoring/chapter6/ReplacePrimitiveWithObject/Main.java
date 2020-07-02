@@ -10,12 +10,9 @@ public class Main {
         List<Order> orders = Arrays.asList(new Order(), new Order(), new Order());
 
         int length = orders.stream()
-                .filter(e -> e.getPriority().equals("aa") || e.getPriority().equals("sss"))
+                .filter(e -> e.getPriority().toString().equals("aa") ||
+                        e.getPriority().toString().equals("sss"))
                 .collect(Collectors.toList())
                 .size();
-
-
-
-
     }
 }
