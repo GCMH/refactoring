@@ -20,4 +20,8 @@ public class TelephoneNumber {
     public void setOfficeCode(String officeCode) {
         this.officeCode = officeCode;
     }
+
+    public String getTelephoneNumber(){
+        return this.getOfficeCode() + this.getOfficeAreaCode();
+    }
 }
