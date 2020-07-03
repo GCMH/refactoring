@@ -14,13 +14,17 @@ public class Order {
     Item item;
 
     public double getPrice(){
-        double basePrice = this.quantity * this.item.price;
         double discountFactor = 0.98;
-        if(basePrice > 1000.0){
+        if(this.getBasePrice() > 1000.0){
             discountFactor -= 0.3;
         }
-        return basePrice * discountFactor;
+        return this.getBasePrice() * discountFactor;
     }
+
+    public double getBasePrice(){
+        return this.quantity * this.item.price;
+    }
+
 
 
 }
