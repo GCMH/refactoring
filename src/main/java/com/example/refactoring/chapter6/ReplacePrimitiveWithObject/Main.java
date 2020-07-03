@@ -15,10 +15,9 @@ public class Main {
                 .collect(Collectors.toList())
                 .size();
 
-
         orders.stream()
                 .filter(e -> e.getPriority().isEquals(new Priority("11")))
                 .collect(Collectors.toList())
-                .size()
+                .size();
     }
 }
