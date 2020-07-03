@@ -1,38 +1,21 @@
 package com.example.refactoring.chapter6.ExtractClass;
 
 public class Person {
-    String naem;
+    String name;
 
-    String officeAreaCode;
+    TelephoneNumber telephoneNumber;
 
-    String officeCode;
-
-
-    public String getTelephoneNumber() {
-        return this.officeAreaCode + this.officeCode;
+    public Person() {
+        this.telephoneNumber = new TelephoneNumber();
     }
 
-    public String getNaem() {
-        return naem;
+    public String getName() {
+        return name;
     }
 
-    public void setNaem(String naem) {
-        this.naem = naem;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getOfficeAreaCode() {
-        return officeAreaCode;
-    }
 
-    public void setOfficeAreaCode(String officeAreaCode) {
-        this.officeAreaCode = officeAreaCode;
-    }
-
-    public String getOfficeCode() {
-        return officeCode;
-    }
-
-    public void setOfficeCode(String officeCode) {
-        this.officeCode = officeCode;
-    }
 }
