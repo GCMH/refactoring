@@ -16,4 +16,8 @@ public class ShippingCompany {
     public String trackingInfo(){
         return this.trackingInformation.display();
     }
+
+    public void setShippingCompany(ShippingCompany shippingCompany){
+        this.trackingInformation.shippingCompany = shippingCompany;
+    }
 }
