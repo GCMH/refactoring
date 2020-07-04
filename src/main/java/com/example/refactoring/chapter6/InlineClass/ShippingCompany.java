@@ -2,22 +2,33 @@ package com.example.refactoring.chapter6.InlineClass;
 
 public class ShippingCompany {
 
-    TrackingInformation trackingInformation;
 
+    private String trackingInformation;
+    private Integer trackingNumber;
 
-    public TrackingInformation getTrackingInformation() {
-        return trackingInformation;
-    }
-
-    public void setTrackingInformation(TrackingInformation trackingInformation) {
+    public void setTrackingInformation(String trackingInformation) {
         this.trackingInformation = trackingInformation;
     }
 
     public String trackingInfo(){
-        return this.trackingInformation.display();
+        return this.display();
     }
 
-    public void setShippingCompany(ShippingCompany shippingCompany){
-        this.trackingInformation.shippingCompany = shippingCompany;
+
+
+    public void setShippingCompany(String shippingCompany) {
+        this.trackingInformation = shippingCompany;
+    }
+
+    public Integer getTrackingNumber() {
+        return this.trackingNumber;
+    }
+
+    public void setTrackingNumber(Integer trackingNumber) {
+        this.trackingNumber = trackingNumber;
+    }
+
+    public String display(){
+        return this.trackingInformation.toString() + this.trackingNumber;
     }
 }

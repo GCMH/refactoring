@@ -5,6 +5,6 @@ public class Main {
         ShippingCompany shippingCompany = new ShippingCompany();
 
 
-        System.out.println(shippingCompany.getTrackingInformation().display());
+        System.out.println(shippingCompany.display());
     }
 }
