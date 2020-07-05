@@ -4,6 +4,6 @@ public class Main {
     public static void main(String[] args) {
         Person person = new Person();
 
-        System.out.println(person.getManager());
+        System.out.println(person.getDepartment().getManager());
     }
 }
