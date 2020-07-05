@@ -25,4 +25,5 @@ public class Person {
     public String getManager(){
         return this.department.manager;
     }
+
 }
