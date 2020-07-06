@@ -25,4 +25,8 @@ public class Account {
         }
 
     }
+
+    double overdraftCharge(){
+        return this.type.overdraftCharge(this.daysOverdrawn);
+    }
 }
