@@ -1,5 +1,7 @@
 package com.example.refactoring.chapter6.MoveField;
 
+import java.time.LocalDateTime;
+
 public class Customer {
     String name;
     String discountRate;
@@ -32,6 +34,10 @@ public class Customer {
 
     public void setContract(CustomerContract contract) {
         this.contract = contract;
+    }
+
+    public void setStartDate(LocalDateTime startDate){
+        this.contract.startDate = startDate;
     }
 
     Object applyDiscount(Amount amount) {
