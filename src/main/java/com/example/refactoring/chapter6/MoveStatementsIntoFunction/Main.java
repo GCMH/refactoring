@@ -10,13 +10,12 @@ public class Main {
 
     }
 
-
     List<Object> renderPerson(OutputStream outStream, Persion person) {
         List<Object> result = new ArrayList<>();
         result.add("<p>${person.name}</p>");
         result.add(renderPhoto(person.photo));
         result.add("<p>title: ${person.photo.title}</p>");
-        result.add(emitPhotoData(person.photo));
+        result.add(photoDiv(person.photo));
         result.add("\n");
         return result;
     }
@@ -27,15 +26,17 @@ public class Main {
 
     String photoDiv(String p) {
         return "<div>" + "<p>title: ${p.title}</p>" +
-                emitPhotoData(p) +
+                zzNew(p) +
                 "</div>" + "\n";
     }
 
-    List<String> emitPhotoData(String p) {
+    List<String> zzNew(String p){
         List<String> result = new ArrayList<>();
         result.add("<p>location: ${aPhoto.location}</p>");
         result.add("<p>date: ${aPhoto.date.toDateString()}</p>");
         result.add("\n");
         return result;
     }
+
+
 }
