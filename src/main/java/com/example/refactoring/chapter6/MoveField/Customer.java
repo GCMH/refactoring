@@ -30,6 +30,7 @@ public class Customer {
 
     public CustomerContract getContract() {
         return contract;
+
     }
 
     public void setContract(CustomerContract contract) {
