@@ -2,18 +2,21 @@ package com.example.refactoring.chapter6.SlideStatements;
 
 public class Main {
     public static void main(String[] args) {
-        PricingPlan pricingPlan = retrievePricingPlan();
+
         Order order = retreiveOrder();
-        int baseCharge = pricingPlan.base;
-        int charge;
-        int chargePerUnit = pricingPlan.unit;
+
         int units = order.units;
-        int discount;
-        charge = baseCharge + units * chargePerUnit;
+        PricingPlan pricingPlan = retrievePricingPlan();
         int discountableUnits = Math.max(units - pricingPlan.discountThreshold, 0);
+        int discount;
         discount = discountableUnits * pricingPlan.discountFactor;
         if (order.isRepeat) discount += 20;
-        charge = charge - discount;
+
+        int charge;
+        int baseCharge = pricingPlan.base;
+        int chargePerUnit = pricingPlan.unit;
+        charge = baseCharge + units * chargePerUnit;
+        charge -= discount;
         chargeOrder(charge);
     }
 
