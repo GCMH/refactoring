@@ -3,6 +3,7 @@ package com.example.refactoring.chapter6.ReplaceLoopWithPipeline;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,21 +21,12 @@ public class Main {
 
     static List<String> acquireData(String input) {
         String[] lines = input.split("\n");
-        boolean firstLine = true;
-        List<String> result = new ArrayList<>();
-
-        for (String line : lines) {
-            if (firstLine) {
-                firstLine = false;
-                continue;
-            }
-            if (line.trim().equals(""))
-                continue;
-            String[] record = line.split(",");
-            if (record[1].trim().equals("India")) {
-                result.add("city:" + record[0].trim() +" " + "phone:" + record[2].trim() + "\n");
-            }
-        }
-        return result;
+        return Arrays.stream(lines)
+                .skip(1)
+                .filter(line -> !line.trim().equals(""))
+                .map(line -> line.split(","))
+                .filter(t -> t[1].trim().equals("India"))
+                .map(record -> "city:" + record[0].trim() + " " + "phone:" + record[2].trim() + "\n")
+                .collect(Collectors.toList());
     }
 }
