@@ -1,5 +1,6 @@
 package com.example.refactoring.chapter6.ReplaceDerivedVariableWithQuery;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class ProductionPlan {
@@ -8,12 +9,18 @@ public class ProductionPlan {
 
     List<Adjustment> adjustments;
 
-    public int getProduction() {
-        return this.production;
+    public double getProduction() {
+        return this.calculatedProduction();
     }
 
     void applyAdjustment(Adjustment anAdjustment) {
         this.adjustments.add(anAdjustment);
-        this.production += anAdjustment.amount;
+    }
+
+    double calculatedProduction(){
+        return this.adjustments.stream()
+                .map(arg->new BigDecimal(arg.amount))
+                .reduce(BigDecimal.ZERO, BigDecimal::add)
+                .doubleValue();
     }
 }
