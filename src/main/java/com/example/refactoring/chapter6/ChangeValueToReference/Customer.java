@@ -2,28 +2,18 @@ package com.example.refactoring.chapter6.ChangeValueToReference;
 
 public class Customer {
 
-    private String number;
-    private Customer customer;
+    private String id;
 
-    Customer(String number, Customer customer){
-        this.number = number;
-        this.customer = customer;
+    Customer(String id) {
+        this.id = id;
     }
 
-    public String getNumber() {
-        return number;
+    public String getId() {
+        return id;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setId(String id) {
+        this.id = id;
     }
 }
 
