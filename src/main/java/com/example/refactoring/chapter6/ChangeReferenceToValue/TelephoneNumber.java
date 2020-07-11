@@ -4,6 +4,12 @@ public class TelephoneNumber {
     public String areaCode;
     public String number;
 
+
+    TelephoneNumber(String areaCode, String number){
+        this.areaCode = areaCode;
+        this.number = number;
+    }
+
     public String getAreaCode() {
         return areaCode;
     }

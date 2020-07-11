@@ -4,9 +4,11 @@ package com.example.refactoring.chapter6.ChangeReferenceToValue;
 public class Preson {
 
     private TelephoneNumber telephoneNumber;
+    private String offerNumber;
+    private String areaCode;
 
-    Preson() {
-        this.telephoneNumber = new TelephoneNumber();
+    Preson(String areCode, String number) {
+        this.telephoneNumber = new TelephoneNumber(areCode, number);
     }
 
     public String getOfficeAreaCode() {
@@ -14,7 +16,7 @@ public class Preson {
     }
 
     public void setOfficeAreaCode(String arg) {
-        this.telephoneNumber.areaCode = arg;
+        this.telephoneNumber = new TelephoneNumber(arg, this.areaCode);
     }
 
     public String getOfficeNumber() {
@@ -22,6 +24,6 @@ public class Preson {
     }
 
     public void setOfficeNumber(String arg) {
-        this.telephoneNumber.number = arg;
+        this.telephoneNumber = new TelephoneNumber(this.offerNumber, arg);
     }
 }
