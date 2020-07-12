@@ -1,6 +1,5 @@
 package com.example.refactoring.chapter6.DecomposeConditional;
 
-import java.time.Instant;
 import java.time.LocalDateTime;
 
 public class Main {
